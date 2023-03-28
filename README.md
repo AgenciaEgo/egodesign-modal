@@ -1,2 +1,2 @@
-# egodesign-modal
+# @egodesign/modal
 Modal component
