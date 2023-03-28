@@ -1,0 +1,35 @@
+{
+    "name": "modal",
+    "version": "0.1.0",
+    "description": "Modal component",
+    "main": "index.js",
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AgenciaEgo/egodesign-modal.git"
+    },
+    "keywords": [
+        "modal",
+        "component"
+    ],
+    "author": "Ego",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/AgenciaEgo/egodesign-modal/issues"
+    },
+    "homepage": "https://github.com/AgenciaEgo/egodesign-modal#readme",
+    "devDependencies": {
+        "laravel-mix": "^6.0.43",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.51.0",
+        "sass-loader": "^12.1.0"
+    }
+}

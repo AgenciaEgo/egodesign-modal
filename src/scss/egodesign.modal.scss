@@ -1,0 +1,98 @@
+@import 'variables';
+@import 'mixins';
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border: 0;
+    background-color: rgba(0, 0, 0, .5);
+    overflow-y: auto;
+
+    &__wrapper {
+        display: grid;
+        align-items: center;
+        width: 100%;
+        min-height: 100%;
+        padding: 20px;
+    }
+
+    &__box {
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 700px;
+        background-color: #fff;
+        border-radius: 20px;
+        cursor: default;
+        font-size: 18px;
+        line-height: 1.2;
+        color: #141414;
+
+        &__close-btn {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            border: 0;
+            border-radius: 50%;
+            background-color: #eaeaea;
+            outline: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color .2s ease-in-out;
+
+            .times {
+                width: 25px;
+                height: 25px;
+                padding: 5px;
+
+                * {
+                    transition: stroke .2s ease-in-out;
+                    stroke: #141414;
+                }
+            }
+
+            &:hover {
+                background-color: #141414;
+
+                .times {
+                    * {
+                        stroke: #fff;
+                    }
+                }
+            }
+        }
+
+        &__body {
+            position: relative;
+            margin: 80px 40px 40px;
+        }
+    }
+
+    $modal: &;
+
+    @include device-md {
+        &__wrapper {
+            padding: 0;
+        }
+
+        &__box {
+            &__close-btn {
+                top: 20px;
+                right: 20px;
+            }
+
+            &__body {
+                margin: 65px 20px 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,112 @@
+
+@use 'sass:math';
+
+//BREAKPOINTS
+// Small devices
+@mixin device-sm($direction: 'max') {
+    @if $direction == 'max' {
+        @media (max-width: #{$screen-sm-min - 1}px) { // 576px
+            @content;
+        }
+    }
+    @if $direction == 'min' {
+        @media (min-width: #{$screen-sm-min}px) { // 576px
+            @content;
+        }
+    }
+}
+
+// Medium devices
+@mixin device-md($direction: 'max') {
+    @if $direction == 'max' {
+        @media (max-width: #{$screen-md-min - 1}px) { // 768px
+            @content;
+        }
+    }
+    @if $direction == 'min' {
+        @media (min-width: #{$screen-md-min}px) { // 768px
+            @content;
+        }
+    }
+}
+
+// Large devices
+@mixin device-lg($direction: 'max') { // 992px
+    @if $direction == 'max' {
+        @media (max-width: #{$screen-lg-min - 1}px) {
+            @content;
+        }
+    }
+    @if $direction == 'min' {
+        @media (min-width: #{$screen-lg-min}px) {
+            @content;
+        }
+    }
+}
+
+
+// Extra large devices
+@mixin device-xl($direction: 'max') { // 1200px
+    @if $direction == 'max' {
+        @media (max-width: #{$screen-xl-min - 1}px) {
+            @content;
+        }
+    }
+    @if $direction == 'min' {
+        @media (min-width: #{$screen-xl-min}px) { // 1200px
+            @content;
+        }
+    }
+}
+
+@mixin device-wrapper($direction: 'max') { // 1200px
+    @if $direction == 'max' {
+        @media (max-width: #{$max_width_wrapper - 1px}) {
+            @content;
+        }
+    }
+    @if $direction == 'min' {
+        @media (min-width: #{$max_width_wrapper}) {
+            @content;
+        }
+    }
+}
+
+// Custom devices
+@mixin rwd($screen) {
+    @media (max-width: #{$screen}px) {
+        @content;
+    }
+}
+
+
+@mixin font-size($size: 16, $line-height: normal, $weight: 400,  $letter-spacing: normal) {
+    font-size: $size + px;
+    font-size: (0.0625 * $size) + rem;
+    font-weight: $weight;
+
+    @if $line-height == normal {
+        line-height: normal;
+    } @else {
+        line-height: math.div($line-height, $size);
+    }
+
+    @if $letter-spacing == normal {
+        letter-spacing: normal;
+    } @else {
+        letter-spacing: #{math.div($letter-spacing, $size)}em;
+    }
+}
+
+@mixin flex-center($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin image-responsive($display: block) {
+    display: $display;
+    max-width: 100%;
+    height: auto;
+}
