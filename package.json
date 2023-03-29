@@ -1,8 +1,8 @@
 {
-    "name": "modal",
+    "name": "@egodesign/modal",
     "version": "0.1.0",
     "description": "Modal component",
-    "main": "index.js",
+    "main": "dist/js/egodesign.modal.js",
     "scripts": {
         "dev": "npm run development",
         "development": "mix",
@@ -31,5 +31,8 @@
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.51.0",
         "sass-loader": "^12.1.0"
-    }
+    },
+    "files": [
+        "dist"
+    ]
 }
