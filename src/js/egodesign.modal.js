@@ -7,7 +7,6 @@ class EgoModal {
         this.lockScrollOnOpen = lockScrollOnOpen || true,
         this.box = element.querySelector('.modal__box'),
         this.content = element.querySelector('.modal__box__content'),
-        this.closeBtn = element.querySelector('.modal__box__close-btn'),
         this.onOpen = onOpen,
         this.onClose = onClose,
         this.state = false,
@@ -133,7 +132,6 @@ class EgoModal {
         const self = this;
         self.modal.addEventListener('click', () => self.close());
         self.box.addEventListener('click', (e) => e.stopImmediatePropagation());
-        if (self.closeBtn) self.closeBtn.addEventListener('click', () => self.close());
 
         self.modal.querySelectorAll('.modal__close').forEach(btn => {
             btn.addEventListener('click', e => {
