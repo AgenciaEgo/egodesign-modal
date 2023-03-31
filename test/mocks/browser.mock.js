@@ -1,0 +1,1 @@
+Object.defineProperty(global.document, 'querySelector', { value: jest.fn() });
