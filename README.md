@@ -42,7 +42,7 @@ const egoModal = new EgoModal({
 | `element` | DOM element | &check; | The main dialog DOM element. |
 | `lockScrollOnOpen` | boolean | | Wheather or not the body scroll should be hidden. Default: `true`. |
 | `animation` | string | | Besides the default fade in and fade out effect, you can optionally add an extra native animation. Available options are `rise`, `sink`, `grow` or `shrink`. |
-<br/>p
+<br/>
 
 ## Events:
 | Name | Description |
