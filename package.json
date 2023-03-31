@@ -2,15 +2,12 @@
     "name": "@egodesign/modal",
     "version": "0.1.0",
     "description": "Modal component",
-    "main": "dist/js/egodesign.modal.js",
+    "module": "dist/js/egodesign.modal.esm.min.js",
+    "browser": "dist/js/egodesign.modal.umd.min.js",
+    "main": "dist/js/egodesign.modal.cjs.min.js",
     "scripts": {
-        "dev": "npm run development",
-        "development": "mix",
-        "watch": "mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
-        "prod": "npm run production",
-        "production": "mix --production"
+        "build": "rollup -c",
+        "watch": "rollup -c -w"
     },
     "repository": {
         "type": "git",
@@ -27,10 +24,12 @@
     },
     "homepage": "https://github.com/AgenciaEgo/egodesign-modal#readme",
     "devDependencies": {
-        "laravel-mix": "^6.0.43",
-        "resolve-url-loader": "^5.0.0",
-        "sass": "^1.51.0",
-        "sass-loader": "^12.1.0"
+        "@rollup/plugin-commonjs": "^24.0.1",
+        "@rollup/plugin-node-resolve": "^15.0.1",
+        "rollup": "^2.79.1",
+        "rollup-plugin-scss": "^4.0.0",
+        "rollup-plugin-terser": "^7.0.2",
+        "sass": "^1.60.0"
     },
     "files": [
         "dist"

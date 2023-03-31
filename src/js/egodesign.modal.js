@@ -1,3 +1,4 @@
+import '../scss/egodesign.modal.scss';
 import { vanillaFade } from "./modules/tools";
 
 class EgoModal {
@@ -12,7 +13,10 @@ class EgoModal {
         this.state = false,
         this.animation = animation || '';
 
-        this.declareHandlers();
+        this.runChecks()
+            .then(() => {
+                this.declareHandlers();
+            });
     }
 
     setAnimationType() {
@@ -114,11 +118,22 @@ class EgoModal {
         if (typeof callback === 'function') callback();
     }
 
+    runChecks() {
+        const self = this;
+        return new Promise((resolve, reject) => {
+            let goOn = true;
+            if (!self.modal) throw new Error(`There's no modal element.`);
+            if (!self.box) throw new Error(`There's no modal box element.`);
+            if (goOn) resolve();
+            else reject();
+        });
+    }
+
     declareHandlers() {
         const self = this;
-        self.closeBtn.addEventListener('click', () => self.close());
         self.modal.addEventListener('click', () => self.close());
         self.box.addEventListener('click', (e) => e.stopImmediatePropagation());
+        if (self.closeBtn) self.closeBtn.addEventListener('click', () => self.close());
 
         self.modal.querySelectorAll('.modal__close').forEach(btn => {
             btn.addEventListener('click', e => {
