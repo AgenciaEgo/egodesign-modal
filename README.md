@@ -2,9 +2,9 @@
 <br/>
 
 ## Usage:
-Import the **EgoForm** class into your file and then create as many instances as you need.
+Import the **EgoModal** class into your file and then create as many instances as you need.
 ```js
-import EgoForm from '@egodesign/modal';
+import EgoModal from '@egodesign/modal';
 
 const egoModal = new EgoModal({
     element: document.getElementById('egoModal')
@@ -28,7 +28,7 @@ const egoModal = new EgoModal({
 | --- | ----------- |
 | `modal` | This is the mail element that wraps the whole modal, cinluding the overlay. |
 | `modal__box` | This is the box of the modal itself. |
-| `modal__content` | This is the context body. When using the `inyectContent()` method the content will be placed inside this element. |
+| `modal__content` | This is the context body. When using the `injectContent()` method the content will be placed inside this element. |
 
 ### Optional class names:
 | Class | Description |
@@ -41,8 +41,8 @@ const egoModal = new EgoModal({
 | --- | --- | --- | ----------- |
 | `element` | DOM element | &check; | The main dialog DOM element. |
 | `lockScrollOnOpen` | boolean | | Wheather or not the body scroll should be hidden. Default: `true`. |
-| `animation` | string | | Besides the default fade in and fade out effect, you can optionally add an extra native animation. Available options are `rise`, `shrink`, `grow` or `shrink`. |
-<br/>
+| `animation` | string | | Besides the default fade in and fade out effect, you can optionally add an extra native animation. Available options are `rise`, `sink`, `grow` or `shrink`. |
+<br/>p
 
 ## Events:
 | Name | Description |
@@ -54,4 +54,4 @@ const egoModal = new EgoModal({
 ## Methods:
 | Name | Description |
 | --- | ----------- |
-| `inyectContent` | Add content to de `modal__content` element on the fly. The first parameter should be the HTML string, and it can also recieve a callback function as second parameter. |
+| `injectContent` | Add content to de `modal__content` element on the fly. The first parameter should be the HTML string, and it can also recieve a callback function as second parameter. |

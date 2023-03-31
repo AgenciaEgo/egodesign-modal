@@ -112,7 +112,7 @@ class EgoModal {
         else body.style.removeProperty('overflow');
     }
 
-    inyectContent(content, callback) {
+    injectContent(content, callback) {
         this.content.innerHTML = content;
         if (typeof callback === 'function') callback();
     }
