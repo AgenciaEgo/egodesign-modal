@@ -1,6 +1,10 @@
 # @egodesign/modal
 <br/>
 
+## Installation
+```npm install @egodesign/modal```
+<br /><br />
+
 ## Usage:
 Import the **EgoModal** class into your file and then create as many instances as you need.
 ```js
